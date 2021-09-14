@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome</title>
+</head>
+
+<body>
+    {{>partials/header}}
+    <hr />
+    <h3>What your name?</h3>
+    <form method="GET">
+        <input type="text" name="name" placeholder="Write your name" />
+        <input type="submit" value="send" />
+    </form>
+
+    {{#name}}
+    <hr />
+    <h1>{{name}} é o mais pika das galaxias</h1>
+    {{/name}}
+    <hr />
+    {{>partials/footer}}
+</body>
+
+</html>

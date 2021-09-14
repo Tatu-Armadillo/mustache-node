@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina Home</title>
+</head>
+
+<body>
+    {{>partials/header}}
+    <hr />
+
+    <p>Quem é o maculado: {{name}}</p>
+    <p>Idade do maculado: {{age}}</p>
+    {{#showBobo}}
+    <!--IF-->
+    <h2>Bobão</h2>
+    {{/showBobo}}
+    {{^showBobo}}
+    <!--ELSE-->
+    <h2>Não é Bobão</h2>
+    {{/showBobo}}
+    <hr />
+
+    <!-- Listas -->
+    <h3>Productos baratos</h3>
+    <ul>
+        {{#products}}
+        <!--Loop de objetos-->
+        <li>{{title}} - R$ {{price}}</li>
+        {{/products}}
+    </ul>
+    <hr />
+    <h3>Productos a partir de 12</h3>
+    <ul>
+        {{#expensive}}
+        <!--Loop de objetos-->
+        <li>{{title}} - R$ {{price}}</li>
+        {{/expensive}}
+    </ul>
+    <hr />
+    <ul>
+        {{#frasesDoDia}}
+        <!--Loop sem objetos-->
+        <li>{{.}}</li>
+        {{/frasesDoDia}}
+        {{^frasesDoDia}}
+        <li>Sem frases do dia</li>
+        {{/frasesDoDia}}
+    </ul>
+
+    <hr />
+    {{>partials/footer}}
+</body>
+
+</html>

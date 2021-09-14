@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Nome</title>
+</head>
+
+<body>
+    {{>partials/header}}
+    <hr />
+    <h3>Idade de nascimento?</h3>
+    <form method="POST" action="/idade-resultado">
+        <input type="number" name="ano" placeholder="Digite o ano de nascimento" />
+        <input type="submit" value="Enviar" />
+    </form>
+
+    {{#mostrarIdade}}
+    <hr />
+    <h4>Você tem {{idade}}</h4>
+    {{/mostrarIdade}}
+    {{>partials/footer}}
+</body>
+
+</html>
